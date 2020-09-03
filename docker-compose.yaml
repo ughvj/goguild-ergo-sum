@@ -1,0 +1,23 @@
+version: '3'
+services:
+  server:
+    build:
+      context: ./docker/server
+    ports:
+      - 50051:50051
+    depends_on: [
+      "redis"
+    ]
+    volumes:
+      - ./server:/go/src/goguild
+    command: realize start --run
+    container_name: server
+  redis:
+    build:
+      context: ./docker/redis
+    restart: always
+    volumes:
+      - ./redis/persistent:/data
+    ports:
+      - "6379:6379"
+    container_name: redis
