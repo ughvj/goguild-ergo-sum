@@ -1,0 +1,12 @@
+syntax = "proto3";
+option go_package=".;pb";
+
+service Command {
+  rpc Receive (ReceiveRequest) returns (ReceiveResponse) {}
+}
+
+message ReceiveRequest {
+}
+message ReceiveResponse {
+  string command = 1;
+}

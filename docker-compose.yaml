@@ -9,8 +9,10 @@ services:
       "redis"
     ]
     volumes:
-      - ./server:/go/src/goguild
+      - ./server:/go/src/github.com/ughvj/goguild-ergo-sum
     command: realize start --run
+    env_file:
+      - ./server/vars.env
     container_name: server
   redis:
     build:
