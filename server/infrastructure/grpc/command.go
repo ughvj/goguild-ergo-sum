@@ -3,6 +3,7 @@ package grpc
 import (
 	"net"
 	"context"
+	"os"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -14,7 +15,7 @@ import (
 )
 
 func LaunchCommandServer() error {
-	port, err := net.Listen("tcp", ":50051")
+	port, err := net.Listen("tcp", ":" + os.Getenv("WORKING_PORT"))
 	if err != nil {
 		return err
 	}

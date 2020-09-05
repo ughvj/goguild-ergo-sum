@@ -6,7 +6,7 @@
 
 `$ redis-cli`
 
-`$ set command testvalue`
+`127.0.0.1:6379> set command testvalue`
 
 ### Send a request with gRPC client
 

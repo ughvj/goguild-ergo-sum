@@ -10,7 +10,7 @@ services:
     ]
     volumes:
       - ./server:/go/src/github.com/ughvj/goguild-ergo-sum
-    command: realize start --run
+    command: go run main.go
     env_file:
       - ./server/vars.env
     container_name: server

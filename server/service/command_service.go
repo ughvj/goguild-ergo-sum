@@ -30,6 +30,7 @@ func (s *CommandService) Receive(
 		return nil, errors.New("Resource was not found")
 	}
 
+	log.Println("Response: " + res)
 	return &pb.ReceiveResponse{
 		Command: res,
 	}, nil
